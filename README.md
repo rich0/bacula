@@ -1,3 +1,8 @@
+This is a work in progress, forked from fametec/bacula-client.
+All credit to the original author for the bulk of this work.
+
+I am still updating documentation/etc, so please do not bother the original author via email addresses about issues with this repository.
+
 # Bacula 11.0.5 Container
 
 Deploy the bacula community edition on Docker Containers. 
