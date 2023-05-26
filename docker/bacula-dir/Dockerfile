@@ -1,6 +1,6 @@
-FROM fametec/bacula-base:11.0.5
+FROM ghcr.io/rich0/docker-base:11.0.6
 
-MAINTAINER eduardo@fametec.com.br
+MAINTAINER rich@rich0.org
 
 VOLUME ["/opt/bacula/etc"]
 
