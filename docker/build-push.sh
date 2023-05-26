@@ -1,5 +1,5 @@
 #!/bin/bash
-BACULA_VERSION=11.0.6
+BACULA_VERSION=13.0.3
 docker build bacula-base --pull --no-cache --tag ghcr.io/rich0/bacula-base:$BACULA_VERSION && docker push ghcr.io/rich0/bacula-base:$BACULA_VERSION 
 docker build bacula-catalog --pull --no-cache --tag ghcr.io/rich0/bacula-catalog:$BACULA_VERSION && docker push ghcr.io/rich0/bacula-catalog:$BACULA_VERSION
 docker build bacula-dir --pull --no-cache --tag ghcr.io/rich0/bacula-dir:$BACULA_VERSION && docker push ghcr.io/rich0/bacula-dir:$BACULA_VERSION

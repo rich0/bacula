@@ -1,4 +1,4 @@
-FROM ghcr.io/rich0/bacula-base:11.0.6
+FROM ghcr.io/rich0/bacula-base:13.0.3
 
 LABEL org.opencontainers.image.source https://github.com/rich0/docker
 
