@@ -2,6 +2,8 @@ FROM centos:7
 
 MAINTAINER Richard Freeman <rich@rich0.org>
 
+LABEL org.opencontainers.image.source https://github.com/rich0/docker
+
 ENV BACULA_VERSION 11.0.6
 
 # get your key on: https://www.bacula.org/bacula-binary-package-download/
