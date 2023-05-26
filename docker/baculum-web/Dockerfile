@@ -1,6 +1,8 @@
-FROM fametec/bacula-base:11.0.5
+FROM ghcr.io/rich0/bacula-base:11.0.6
 
-MAINTAINER eduardo@fametec.com.br
+LABEL org.opencontainers.image.source https://github.com/rich0/docker
+
+MAINTAINER rich@rich0.org
 
 RUN rpm --import https://www.bacula.org/downloads/baculum/baculum.pub
 

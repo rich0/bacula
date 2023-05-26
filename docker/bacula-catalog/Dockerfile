@@ -1,4 +1,4 @@
-FROM ghcr.io/rich0/docker-base:11.0.6 AS base
+FROM ghcr.io/rich0/bacula-base:11.0.6 AS base
 
 FROM postgres:10
 

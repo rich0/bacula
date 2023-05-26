@@ -1,4 +1,6 @@
-FROM fametec/bacula-base:11.0.5
+FROM ghcr.io/rich0/bacula-base:11.0.6
+
+LABEL org.opencontainers.image.source https://github.com/rich0/docker
 
 VOLUME ["/opt/bacula/etc"]
 

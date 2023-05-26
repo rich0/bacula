@@ -1,4 +1,4 @@
-FROM ghcr.io/rich0/docker-base:11.0.6
+FROM ghcr.io/rich0/bacula-base:11.0.6
 
 MAINTAINER rich@rich0.org
 
