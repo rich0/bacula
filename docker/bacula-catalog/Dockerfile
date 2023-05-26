@@ -1,8 +1,10 @@
-FROM fametec/bacula-base:11.0.5 AS base
+FROM ghcr.io/rich0/docker-base:11.0.6 AS base
 
 FROM postgres:10
 
-MAINTAINER eduardo@fametec.com.br
+MAINTAINER rich@rich0.org
+
+LABEL org.opencontainers.image.source https://github.com/rich0/docker
 
 ENV POSTGRES_PASSWORD bacula
 
