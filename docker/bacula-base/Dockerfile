@@ -18,16 +18,16 @@ COPY bacula-community.repo /etc/yum.repos.d/bacula-community.repo
 RUN sed -i s/BACULA_VERSION/$(echo $BACULA_VERSION)/g /etc/yum.repos.d/bacula-community.repo \
   && sed -i s/BACULA_KEY/$(echo $BACULA_KEY)/g /etc/yum.repos.d/bacula-community.repo
 
-RUN rpm -i https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+#RUN rpm -i https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
 RUN yum -y install epel-release
 
 # RUN dnf -y install postgresql \
 RUN yum -y install \
-	postgresql10 \
 	zip \
 	bzip2 \
-	mtx 
+	mtx
+	# postgresql10
 
 RUN yum install -y bacula-postgresql-$BACULA_VERSION --exclude=bacula-mysql
 
