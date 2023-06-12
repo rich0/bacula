@@ -1,4 +1,4 @@
-FROM centos:7
+FROM ubuntu:jammy
 
 MAINTAINER Richard Freeman <rich@rich0.org>
 
@@ -11,26 +11,24 @@ ENV BACULA_KEY 647031b8bc3ae
 
 ENV EMAIL rich@rich0.org
 
-RUN rpm --import https://www.bacula.org/downloads/Bacula-4096-Distribution-Verification-key.asc
+ENV DEBIAN_FRONTEND=noninteractive
 
-COPY bacula-community.repo /etc/yum.repos.d/bacula-community.repo
+RUN apt update && apt dist-upgrade -y
 
-RUN sed -i s/BACULA_VERSION/$(echo $BACULA_VERSION)/g /etc/yum.repos.d/bacula-community.repo \
-  && sed -i s/BACULA_KEY/$(echo $BACULA_KEY)/g /etc/yum.repos.d/bacula-community.repo
+RUN apt install software-properties-common gpg wget -y
 
-#RUN rpm -i https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+RUN cd /tmp
 
-RUN yum -y install epel-release
+RUN wget https://www.bacula.org/downloads/Bacula-4096-Distribution-Verification-key.asc
 
-# RUN dnf -y install postgresql \
-RUN yum -y install \
-	zip \
-	bzip2 \
-	mtx
-	# postgresql10
+RUN apt-key add Bacula-4096-Distribution-Verification-key.asc
 
-RUN yum install -y bacula-postgresql-$BACULA_VERSION --exclude=bacula-mysql
+RUN add-apt-repository deb https://www.bacula.org/packages/647031b8bc3ae/debs/$BACULA_VERSION/ jammy main
 
-RUN yum -y clean all && rm -rf /var/cache/yum
+RUN apt-get update
+
+RUN apt-get install bacula-postgresql -y
+
+RUN apt-get clean
 
 RUN for i in `ls /opt/bacula/bin`; do ln -s /opt/bacula/bin/$i /usr/sbin/$i; done 
