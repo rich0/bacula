@@ -2,9 +2,13 @@ FROM ghcr.io/rich0/bacula-base:13.0.3
 
 LABEL org.opencontainers.image.source https://github.com/rich0/docker
 
-RUN yum install -y bacula-cloud-storage --exclude=bacula-mysql
+RUN apt-get update
+
+RUN apt-get install -y bacula-cloud-storage-s3
 
 RUN for i in `ls /opt/bacula/bin`; do if test -z /usr/sbin/$i; then ln -s /opt/bacula/bin/$i /usr/sbin/$i; fi; done 
+
+RUN apt-get clean
 
 VOLUME ["/opt/bacula/etc"]
 
