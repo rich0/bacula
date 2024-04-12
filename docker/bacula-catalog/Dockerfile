@@ -1,4 +1,4 @@
-FROM ghcr.io/rich0/bacula-base:13.0.3 AS base
+FROM ghcr.io/rich0/bacula-base:15.0.2 AS base
 
 FROM postgres:10
 

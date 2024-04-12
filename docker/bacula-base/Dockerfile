@@ -4,7 +4,7 @@ MAINTAINER Richard Freeman <rich@rich0.org>
 
 LABEL org.opencontainers.image.source https://github.com/rich0/docker
 
-ENV BACULA_VERSION 13.0.3
+ENV BACULA_VERSION 15.0.2
 
 # get your key on: https://www.bacula.org/bacula-binary-package-download/
 ENV BACULA_KEY 647031b8bc3ae
